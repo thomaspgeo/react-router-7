@@ -1,0 +1,11 @@
+.DS_Store
+.react-router
+build
+node_modules
+*.tsbuildinfo
+
+# project specific
+.vercel
+
+# Local Netlify folder
+.netlify

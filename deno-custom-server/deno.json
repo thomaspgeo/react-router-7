@@ -1,0 +1,18 @@
+{
+  "tasks": {
+    "build": "deno run -A npm:@react-router/dev@0.0.0-experimental-121725374 build",
+    "dev": "deno run -A  --env-file=.env server.ts",
+    "start": "deno run --allow-read --allow-net --allow-env server.ts",
+    "typecheck": "deno check \"**/*.{ts,tsx}\" *.ts"
+  },
+  "compilerOptions": {
+    "lib": ["deno.worker", "DOM", "DOM.Iterable", "ES2022"],
+    "types": ["vite/client"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "jsxImportSourceTypes": "@types/react"
+  },
+  "lint": {
+    "exclude": ["build", "node_modules", ".react-router"]
+  }
+}
