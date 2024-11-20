@@ -1,13 +1,6 @@
 import "react-router";
 import { createRequestHandler } from "@react-router/express";
-import type { VercelRequest, VercelResponse } from "@vercel/node";
 import express from "express";
-
-declare module "react-router" {
-  interface AppLoadContext {
-    VALUE_FROM_EXPRESS: string;
-  }
-}
 
 const app = express();
 

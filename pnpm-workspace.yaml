@@ -4,4 +4,5 @@ packages:
   - "netlify"
   - "node-custom-server"
   - "node-postgres"
+  - "static"
   - "vercel"
