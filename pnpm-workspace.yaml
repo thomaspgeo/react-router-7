@@ -3,4 +3,5 @@ packages:
   - "cloudflare"
   - "netlify"
   - "node-custom-server"
+  - "node-postgres"
   - "vercel"
