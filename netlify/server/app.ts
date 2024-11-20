@@ -1,0 +1,20 @@
+import type { Context } from "@netlify/functions";
+import { createRequestHandler } from "react-router";
+
+declare module "react-router" {
+  interface AppLoadContext {
+    VALUE_FROM_NETLIFY: string;
+  }
+}
+
+const requestHandler = createRequestHandler(
+  // @ts-expect-error - virtual module provided by React Router at build time
+  () => import("virtual:react-router/server-build"),
+  import.meta.env.MODE
+);
+
+export default async (request: Request, context: Context) => {
+  return requestHandler(request, {
+    VALUE_FROM_NETLIFY: "Hello from Netlify",
+  });
+};
