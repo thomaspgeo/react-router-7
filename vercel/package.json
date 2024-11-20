@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "build": "react-router build && node vercel/prepare.js",
-    "dev": "react-router dev",
+    "dev": "NODE_ENV=development node ./dev-server.js",
     "typecheck": "react-router typegen && tsc --build --noEmit"
   },
   "dependencies": {
