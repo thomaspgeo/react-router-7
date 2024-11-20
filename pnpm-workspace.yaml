@@ -1,6 +1,7 @@
 packages:
   - "basic"
   - "cloudflare"
+  - "cloudflare-d1"
   - "netlify"
   - "node-custom-server"
   - "node-postgres"

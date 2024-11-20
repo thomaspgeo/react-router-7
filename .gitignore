@@ -6,8 +6,12 @@ build
 node_modules
 *.tsbuildinfo
 
-# project specific
-.vercel
+# Cloudflare specific
+.mf
+.wrangler
 
-# Local Netlify folder
+# Netlify specific
 .netlify
+
+# Vercel specific
+.vercel
