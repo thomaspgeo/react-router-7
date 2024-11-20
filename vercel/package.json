@@ -9,7 +9,6 @@
   "dependencies": {
     "@react-router/express": "0.0.0-experimental-121725374",
     "@react-router/node": "0.0.0-experimental-121725374",
-    "@react-router/serve": "0.0.0-experimental-121725374",
     "@vercel/node": "^3.2.25",
     "express": "^4.21.1",
     "isbot": "^5.1.17",
