@@ -1,4 +1,4 @@
-import type { Context } from "@netlify/functions";
+import type { Config, Context } from "@netlify/functions";
 import { createRequestHandler } from "react-router";
 
 declare module "react-router" {
@@ -17,4 +17,9 @@ export default async (request: Request, context: Context) => {
   return requestHandler(request, {
     VALUE_FROM_NETLIFY: "Hello from Netlify",
   });
+};
+
+export const config: Config = {
+  path: "/*",
+  preferStatic: true,
 };
