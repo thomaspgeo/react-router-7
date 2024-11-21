@@ -1,18 +1,53 @@
 {
   "tasks": {
     "build": "deno run -A npm:@react-router/dev@0.0.0-experimental-121725374 build",
-    "dev": "deno run -A  --env-file=.env server.ts",
-    "start": "deno run --allow-read --allow-net --allow-env server.ts",
+    "dev": "deno run -A  --env-file=.env main.ts",
+    "start": "deno run --allow-read --allow-net --allow-env main.ts",
     "typecheck": "deno check \"**/*.{ts,tsx}\" *.ts"
   },
   "compilerOptions": {
-    "lib": ["deno.worker", "DOM", "DOM.Iterable", "ES2022"],
-    "types": ["vite/client"],
+    "lib": [
+      "deno.worker",
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
+    "types": [
+      "vite/client"
+    ],
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "jsxImportSourceTypes": "@types/react"
   },
+  "imports": {
+    "buffer": "node:buffer",
+    "crypto": "node:crypto",
+    "events": "node:events",
+    "fs": "node:fs",
+    "http": "node:http",
+    "net": "node:net",
+    "path": "node:path",
+    "querystring": "node:querystring",
+    "stream": "node:stream",
+    "string_decoder": "node:string_decoder",
+    "tty": "node:tty",
+    "url": "node:url",
+    "util": "node:util",
+    "zlib": "node:zlib"
+  },
   "lint": {
-    "exclude": ["build", "node_modules", ".react-router"]
+    "exclude": [
+      "build",
+      "node_modules",
+      ".react-router"
+    ]
+  },
+  "deploy": {
+    "project": "28db2e0b-5dfd-4375-ae11-5cc55d8971f1",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "main.ts"
   }
 }
