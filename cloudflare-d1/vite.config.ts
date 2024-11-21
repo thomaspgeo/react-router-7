@@ -4,7 +4,6 @@ import autoprefixer from "autoprefixer";
 import tailwindcss from "tailwindcss";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { unstable_getMiniflareWorkerOptions } from "wrangler";
 
 export default defineConfig(({ isSsrBuild }) => ({
   build: {
@@ -28,6 +27,7 @@ export default defineConfig(({ isSsrBuild }) => ({
     optimizeDeps: {
       include: [
         "react",
+        "react/jsx-runtime",
         "react/jsx-dev-runtime",
         "react-dom",
         "react-dom/server",
@@ -39,9 +39,9 @@ export default defineConfig(({ isSsrBuild }) => ({
     vitePluginViteNodeMiniflare({
       entry: "./workers/app.ts",
       miniflareOptions: (options) => {
-        const wrangler = unstable_getMiniflareWorkerOptions("wrangler.toml");
-        options.compatibilityFlags = wrangler.workerOptions.compatibilityFlags;
-        options.d1Databases = wrangler.workerOptions.d1Databases;
+        options.compatibilityDate = "2024-11-18";
+        options.compatibilityFlags = ["nodejs_compat"];
+        options.d1Databases = { DB: "your-database-id" };
         // match where wrangler applies migrations to
         options.d1Persist = ".wrangler/state/v3/d1";
       },
