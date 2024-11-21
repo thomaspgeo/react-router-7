@@ -158,6 +158,9 @@ importers:
       '@react-router/dev':
         specifier: 0.0.0-experimental-121725374
         version: 0.0.0-experimental-121725374(@react-router/serve@0.0.0-experimental-121725374(react-router@0.0.0-experimental-121725374(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3))(@types/node@20.17.6)(react-router@0.0.0-experimental-121725374(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(typescript@5.6.3)(vite@5.4.11(@types/node@20.17.6))(wrangler@3.88.0(@cloudflare/workers-types@4.20241112.0))
+      '@types/node':
+        specifier: ^20
+        version: 20.17.6
       '@types/react':
         specifier: ^18.3.12
         version: 18.3.12
