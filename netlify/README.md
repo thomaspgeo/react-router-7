@@ -16,17 +16,10 @@ A modern, production-ready template for building full-stack React applications u
 
 ### Installation
 
-Choose your preferred package manager and run one of the following commands:
+Install the dependencies:
 
 ```bash
-# Using npm
 npm install
-
-# Using pnpm
-pnpm install
-
-# Using Bun
-bun install
 ```
 
 ### Development
@@ -34,14 +27,7 @@ bun install
 Start the development server with HMR:
 
 ```bash
-# Using npm
 npm run dev
-
-# Using pnpm
-pnpm dev
-
-# Using Bun
-bun dev
 ```
 
 Your application will be available at `http://localhost:5173`.
@@ -51,14 +37,7 @@ Your application will be available at `http://localhost:5173`.
 Create a production build:
 
 ```bash
-# Using npm
 npm run build
-
-# Using pnpm
-pnpm build
-
-# Using Bun
-bun run build
 ```
 
 ## Deployment
@@ -72,4 +51,3 @@ This template comes with [Tailwind CSS](https://tailwindcss.com/) already config
 ---
 
 Built with ❤️ using React Router.
-

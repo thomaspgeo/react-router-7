@@ -16,6 +16,8 @@ A modern, production-ready template for building full-stack React applications u
 
 ### Installation
 
+Install the dependencies:
+
 ```bash
 deno install
 ```

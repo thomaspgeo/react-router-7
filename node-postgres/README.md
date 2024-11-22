@@ -17,17 +17,10 @@ A modern, production-ready template for building full-stack React applications u
 
 ### Installation
 
-Choose your preferred package manager and run one of the following commands:
+Install the dependencies:
 
 ```bash
-# Using npm
 npm install
-
-# Using pnpm
-pnpm install
-
-# Using Bun
-bun install
 ```
 
 ### Development
@@ -37,27 +30,13 @@ Copy `.env.example` to `.env` and provide a `DATABASE_URL` with your connection 
 Run an initial database migration:
 
 ```bash
-# Using npm
 npm run db:migrate
-
-# Using pnpm
-pnpm db:migrate
-
-# Using Bun
-bun run db:migrate
 ```
 
 Start the development server with HMR:
 
 ```bash
-# Using npm
 npm run dev
-
-# Using pnpm
-pnpm dev
-
-# Using Bun
-bun dev
 ```
 
 Your application will be available at `http://localhost:5173`.
@@ -67,14 +46,7 @@ Your application will be available at `http://localhost:5173`.
 Create a production build:
 
 ```bash
-# Using npm
 npm run build
-
-# Using pnpm
-pnpm build
-
-# Using Bun
-bun run build
 ```
 
 ## Deployment
