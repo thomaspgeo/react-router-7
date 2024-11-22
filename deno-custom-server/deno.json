@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "build": "deno run -A npm:@react-router/dev@0.0.0-experimental-121725374 build",
+    "build": "deno run -A npm:@react-router/dev@0.0.0-experimental-b98209dd9 build",
     "dev": "deno run -A  --env-file=.env main.ts",
     "start": "deno run --allow-read --allow-net --allow-env main.ts",
     "typecheck": "deno check \"**/*.{ts,tsx}\" *.ts"
