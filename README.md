@@ -4,11 +4,11 @@ You can quickly create a new React Router application from any of these template
 
 ```bash
 # Using npm
-npx create-react-router@pre --template react-router-templates/<template-name>
+npx create-react-router@latest --template remix-run/react-router-templates/<template-name>
 
 # Using pnpm
-pnpm create react-router@pre --template react-router-templates/<template-name>
+pnpm create react-router@latest --template remix-run/react-router-templates/<template-name>
 
 # Using Bun
-bun create react-router@pre --template react-router-templates/<template-name>
+bun create react-router@latest --template remix-run/react-router-templates/<template-name>
 ```

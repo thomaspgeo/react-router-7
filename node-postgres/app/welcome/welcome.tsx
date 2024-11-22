@@ -113,7 +113,7 @@ export function Welcome({
 
 const resources = [
   {
-    href: "https://reactrouter.com/dev",
+    href: "https://reactrouter.com/docs",
     text: "React Router Docs",
     icon: (
       <svg
