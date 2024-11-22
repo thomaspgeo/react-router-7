@@ -15,3 +15,7 @@ node_modules
 
 # Vercel specific
 .vercel
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

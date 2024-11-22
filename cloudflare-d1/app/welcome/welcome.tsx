@@ -71,12 +71,14 @@ export function Welcome({
               }}
             >
               <input
+                aria-label="Name"
                 name="name"
                 placeholder="Name"
                 required
                 className="w-full dark:bg-gray-800 dark:text-gray-200 dark:border-gray-700 dark:focus:ring-blue-500 h-10 px-3 rounded-lg border border-gray-200 focus:ring-1 focus:ring-blue-500"
               />
               <input
+                aria-label="Email"
                 name="email"
                 type="email"
                 placeholder="your@email.com"

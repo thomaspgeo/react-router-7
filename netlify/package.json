@@ -3,23 +3,27 @@
   "type": "module",
   "scripts": {
     "build": "react-router build && node netlify/prepare.js",
-    "dev": "react-router dev",
+    "dev": "cross-env NODE_ENV=development node ./dev-server.js",
     "start": "netlify serve",
     "typecheck": "react-router typegen && tsc --build --noEmit"
   },
   "dependencies": {
     "@netlify/functions": "2.8.2",
     "@react-router/node": "0.0.0-experimental-b98209dd9",
+    "express": "^4.21.1",
     "isbot": "^5.1.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "0.0.0-experimental-b98209dd9"
   },
   "devDependencies": {
+    "@mjackson/node-fetch-server": "0.3.0",
     "@react-router/dev": "0.0.0-experimental-b98209dd9",
+    "@types/express": "^5.0.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3",
