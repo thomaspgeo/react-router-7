@@ -18,11 +18,6 @@ export default defineConfig(({ isSsrBuild, mode }) => ({
     },
   },
   ssr: {
-    // target: "webworker",
-    // noExternal: true,
-    // resolve: {
-    //   conditions: ["deno", "worker"],
-    // },
     optimizeDeps: {
       include: [
         "@react-router/express",
