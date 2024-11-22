@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "build": "deno run -A npm:@react-router/dev@0.0.0-experimental-b98209dd9 build",
+    "build": "deno run -A npm:@react-router/dev build",
     "dev": "deno run -A  --env-file=.env main.ts",
     "start": "deno run --allow-read --allow-net --allow-env main.ts",
     "typecheck": "deno check \"**/*.{ts,tsx}\" *.ts"
@@ -41,13 +41,5 @@
       "node_modules",
       ".react-router"
     ]
-  },
-  "deploy": {
-    "project": "28db2e0b-5dfd-4375-ae11-5cc55d8971f1",
-    "exclude": [
-      "**/node_modules"
-    ],
-    "include": [],
-    "entrypoint": "main.ts"
   }
 }

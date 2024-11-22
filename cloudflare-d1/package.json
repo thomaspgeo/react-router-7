@@ -11,18 +11,18 @@
     "typecheck": "react-router typegen && tsc --build --noEmit"
   },
   "dependencies": {
-    "@react-router/node": "0.0.0-experimental-b98209dd9",
-    "@react-router/serve": "0.0.0-experimental-b98209dd9",
+    "@react-router/node": "*",
+    "@react-router/serve": "*",
     "drizzle-orm": "~0.36.3",
     "isbot": "^5.1.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router": "0.0.0-experimental-b98209dd9"
+    "react-router": "*"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241112.0",
     "@hiogawa/vite-node-miniflare": "0.1.1",
-    "@react-router/dev": "0.0.0-experimental-b98209dd9",
+    "@react-router/dev": "*",
     "@types/node": "^20",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",

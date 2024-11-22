@@ -55,14 +55,6 @@ export async function startCustom(cwd: string) {
 export async function startDeno(cwd: string) {
   let cp: ChildProcess;
 
-  cp = execFile("deno", ["install"], {
-    cwd: path.resolve(process.cwd(), "deno-custom-server"),
-  });
-  await new Promise((resolve) => cp.on("exit", resolve));
-  if (cp.exitCode !== 0) {
-    throw new Error("Failed to run db:migrate");
-  }
-
   cp = execFile("deno", ["task", "dev"], {
     cwd: path.resolve(process.cwd(), cwd),
     env: {

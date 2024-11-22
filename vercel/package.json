@@ -7,17 +7,17 @@
     "typecheck": "react-router typegen && tsc --build --noEmit"
   },
   "dependencies": {
-    "@react-router/express": "0.0.0-experimental-b98209dd9",
-    "@react-router/node": "0.0.0-experimental-b98209dd9",
+    "@react-router/express": "*",
+    "@react-router/node": "*",
     "@vercel/node": "^3.2.25",
     "express": "^4.21.1",
     "isbot": "^5.1.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router": "0.0.0-experimental-b98209dd9"
+    "react-router": "*"
   },
   "devDependencies": {
-    "@react-router/dev": "0.0.0-experimental-b98209dd9",
+    "@react-router/dev": "*",
     "@types/express": "^5.0.0",
     "@types/node": "^20",
     "@types/react": "^18.3.12",

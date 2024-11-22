@@ -1,19 +1,19 @@
 {
   "type": "module",
   "dependencies": {
-    "@react-router/express": "0.0.0-experimental-b98209dd9",
-    "@react-router/node": "0.0.0-experimental-b98209dd9",
+    "@react-router/express": "*",
+    "@react-router/node": "*",
     "compression": "^1.7.5",
     "express": "^4.21.1",
     "morgan": "^1.10.0",
     "isbot": "^5.1.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router": "0.0.0-experimental-b98209dd9"
+    "react-router": "*"
   },
   "devDependencies": {
     "@deno/vite-plugin": "^1.0.0",
-    "@react-router/dev": "0.0.0-experimental-b98209dd9",
+    "@react-router/dev": "*",
     "@types/compression": "^1.7.5",
     "@types/express": "^5.0.0",
     "@types/morgan": "^1.9.9",
