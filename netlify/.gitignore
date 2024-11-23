@@ -6,16 +6,5 @@ build
 node_modules
 *.tsbuildinfo
 
-# Cloudflare specific
-.mf
-.wrangler
-
 # Netlify specific
 .netlify
-
-# Vercel specific
-.vercel
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
