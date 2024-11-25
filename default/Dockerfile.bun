@@ -1,12 +1,12 @@
-FROM oven/bun:1 as dependencies-env
+FROM oven/bun:1 AS dependencies-env
 COPY . /app
 
-FROM dependencies-env as development-dependencies-env
+FROM dependencies-env AS development-dependencies-env
 COPY ./package.json bun.lockb /app/
 WORKDIR /app
 RUN bun i --frozen-lockfile
 
-FROM dependencies-env as production-dependencies-env
+FROM dependencies-env AS production-dependencies-env
 COPY ./package.json bun.lockb /app/
 WORKDIR /app
 RUN bun i --production
