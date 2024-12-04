@@ -1,20 +1,8 @@
-.env
-!.env.example
 .DS_Store
-.react-router
-build
-node_modules
+/node_modules/
 
-# Cloudflare specific
-.mf
-.wrangler
-
-# Netlify specific
-.netlify
-
-# Vercel specific
-.vercel
-/test-results/
-/playwright-report/
+# Tests
 /blob-report/
+/playwright-report/
 /playwright/.cache/
+/test-results/

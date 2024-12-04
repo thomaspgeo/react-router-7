@@ -1,8 +1,9 @@
-node_modules/
+.DS_Store
+/node_modules/
 
 # React Router
-build/
-.react-router/
+/.react-router/
+/build/
 
 # Vercel
-.vercel/
+/.vercel/
