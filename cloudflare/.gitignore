@@ -1,10 +1,10 @@
-.env
-!.env.example
 .DS_Store
-.react-router
-build
-node_modules
+/node_modules/
 
-# Cloudflare specific
+# React Router
+/.react-router/
+/build/
+
+# Cloudflare
 .mf
 .wrangler

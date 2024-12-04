@@ -1,9 +1,9 @@
-.env
-!.env.example
 .DS_Store
-.react-router
-build
-node_modules
+/node_modules/
 
-# Netlify specific
+# React Router
+/.react-router/
+/build/
+
+# Netlify
 .netlify
