@@ -4,7 +4,6 @@
 .react-router
 build
 node_modules
-*.tsbuildinfo
 
 # Netlify specific
 .netlify
