@@ -6,7 +6,6 @@
   ],
   "compilerOptions": {
     "checkJs": true,
-    "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "skipLibCheck": true,
     "strict": true,
