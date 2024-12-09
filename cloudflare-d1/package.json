@@ -24,16 +24,16 @@
     "@hiogawa/vite-node-miniflare": "0.1.1",
     "@react-router/dev": "*",
     "@types/node": "^20",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
     "autoprefixer": "^10.4.20",
     "dotenv-cli": "^7.4.3",
     "drizzle-kit": "~0.28.1",
     "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.15",
-    "typescript": "^5.6.3",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2",
     "vite": "^5.4.11",
-    "vite-tsconfig-paths": "^5.1.2",
+    "vite-tsconfig-paths": "^5.1.4",
     "wrangler": "^3.87.0"
   }
 }
