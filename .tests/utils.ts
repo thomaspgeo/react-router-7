@@ -53,8 +53,13 @@ export const testTemplate = (template: string) =>
       const cwd = await fs.mkdtemp(Path.join(TMP, template + "-"));
       await fs.mkdirp(cwd);
 
-      fs.copySync(Path.join(ROOT, template), cwd, { errorOnExist: true });
-      await execa({ cwd })`pnpm install --prefer-offline --ignore-workspace`;
+      const templatePath = Path.join(ROOT, template);
+      const nodeModulesPath = Path.join(templatePath, "node_modules");
+      fs.copySync(templatePath, cwd, {
+        errorOnExist: true,
+        filter: (src) => Path.normalize(src) !== nodeModulesPath,
+      });
+      fs.symlinkSync(nodeModulesPath, Path.join(cwd, "node_modules"));
 
       await use(cwd);
 
@@ -117,7 +122,7 @@ export function matchLine(
   // Prepare error outside of promise so that stacktrace points to caller of `matchLine`
   const timeout = new Error(`Timed out - Could not find pattern: ${pattern}`);
   return new Promise<string>(async (resolve, reject) => {
-    setTimeout(() => reject(timeout), options.timeout ?? 20_000);
+    setTimeout(() => reject(timeout), options.timeout ?? 10_000);
     stream.on("data", (data) => {
       const line = data.toString();
       const matches = line.match(pattern);

@@ -20,7 +20,7 @@ test("build + start", async ({ page, edit, port, $ }) => {
       .replaceAll("[dev]", "[dev]\nautoLaunch = false")
       .replaceAll("npm run", "pnpm")
   );
-  const start = $(`pnpm start --port ${port}`, { timeout: 20_000 });
+  const start = $(`pnpm start --port ${port}`);
   const url = await matchLine(start.stdout, urlRegex.netlify);
   await workflow({ page, url });
 });
