@@ -1,4 +1,5 @@
 packages:
+  - ".tests"
   - "cloudflare"
   - "cloudflare-d1"
   - "default"
