@@ -62,11 +62,7 @@ export const testTemplate = (template: string) =>
       await use(cwd);
 
       const testPassed = testInfo.errors.length === 0;
-      if (!testPassed) {
-        console.log("cwd: ", cwd);
-        return;
-      }
-      fs.rmSync(cwd, { recursive: true });
+      if (!testPassed) console.log("cwd: ", cwd);
     },
     edit: async ({ cwd }, use) => {
       await use(async (file, transform) => {
