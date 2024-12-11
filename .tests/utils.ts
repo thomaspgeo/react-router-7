@@ -31,7 +31,9 @@ type Edit = (
 type Command = (
   command: string,
   options?: Pick<Options, "env" | "timeout">
-) => ResultPromise<{ reject: false }>;
+) => ResultPromise<{ reject: false }> & {
+  buffer: { stdout: string; stderr: string };
+};
 
 export const testTemplate = (template: string) =>
   playwrightTest.extend<{
@@ -87,20 +89,30 @@ export const testTemplate = (template: string) =>
       const processes: Array<ResultPromise> = [];
       await use((command, options = {}) => {
         const [file, ...args] = parseCommandString(command);
+
         const p = spawn(file, args, options);
-        p.then((result) => {
-          if (!(result instanceof Error)) return result;
-          const expectedError = testHasEnded && result instanceof ExecaError;
-          if (expectedError) return result;
-          throw result;
-        });
         if (p instanceof ChildProcess) {
           processes.push(p);
         }
-        return p;
-      });
-      testHasEnded = true;
 
+        p.then((result) => {
+          if (!(result instanceof Error)) return result;
+
+          // Once the test has ended, this process will be killed as part of its teardown resulting in an ExecaError.
+          // We only care about surfacing errors that occurred during test execution, not during teardown.
+          const expectedError = testHasEnded && result instanceof ExecaError;
+          if (expectedError) return result;
+
+          throw result;
+        });
+
+        const buffer = { stdout: "", stderr: "" };
+        p.stdout.on("data", (data) => (buffer.stdout += data.toString()));
+        p.stderr.on("data", (data) => (buffer.stderr += data.toString()));
+        return Object.assign(p, { buffer });
+      });
+
+      testHasEnded = true;
       processes.forEach((p) => p.kill());
       await Promise.all(processes);
     },

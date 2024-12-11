@@ -15,6 +15,7 @@ test("dev", async ({ page, $ }) => {
 
   const url = await matchLine(dev.stdout, urlRegex.viteDev);
   await workflow({ page, url });
+  expect(dev.buffer.stderr).toBe("");
 });
 
 test("build + start", async ({ page, $ }) => {
@@ -26,6 +27,7 @@ test("build + start", async ({ page, $ }) => {
 
   const url = await matchLine(start.stdout, urlRegex.wrangler);
   await workflow({ page, url });
+  expect(start.buffer.stderr).toBe("");
 });
 
 async function workflow({ page, url }: { page: Page; url: string }) {

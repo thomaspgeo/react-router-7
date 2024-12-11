@@ -15,6 +15,7 @@ test("dev", async ({ page, $ }) => {
 
   const url = await matchLine(dev.stdout, urlRegex.custom);
   await workflow({ page, url });
+  expect(dev.buffer.stderr).toBe("");
 });
 
 test("build", async ({ $ }) => {
