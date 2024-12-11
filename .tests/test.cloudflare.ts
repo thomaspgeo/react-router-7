@@ -33,4 +33,5 @@ async function workflow({ page, url }: { page: Page; url: string }) {
   await expect(page).toHaveTitle(/New React Router App/);
   await page.getByRole("link", { name: "React Router Docs" }).waitFor();
   await page.getByRole("link", { name: "Join Discord" }).waitFor();
+  expect(page.errors).toStrictEqual([]);
 }

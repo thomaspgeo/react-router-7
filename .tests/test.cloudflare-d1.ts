@@ -49,4 +49,5 @@ async function workflow({ page, url }: { page: Page; url: string }) {
 
   await page.goto(url);
   await page.getByText(randomText).waitFor();
+  expect(page.errors).toStrictEqual([]);
 }
