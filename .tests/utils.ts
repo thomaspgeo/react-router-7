@@ -62,11 +62,7 @@ export const testTemplate = (template: string) =>
       await use(cwd);
 
       const testPassed = testInfo.errors.length === 0;
-      if (!testPassed) {
-        console.log("cwd: ", cwd);
-        return;
-      }
-      fs.rmSync(cwd, { recursive: true });
+      if (!testPassed) console.log("cwd: ", cwd);
     },
     edit: async ({ cwd }, use) => {
       await use(async (file, transform) => {
@@ -114,7 +110,6 @@ export const testTemplate = (template: string) =>
 
       testHasEnded = true;
       processes.forEach((p) => p.kill());
-      await Promise.all(processes);
     },
   });
 
@@ -144,3 +139,10 @@ export const urlRegex = {
   netlify: urlMatch({ prefix: /◈ Server now ready on / }),
   wrangler: urlMatch({ prefix: /Ready on / }),
 };
+
+// `vite.createServer` always tries to use the same HMR port
+// unless `server.hmr.port` is configured.
+// Ultimately, we should provide better primitives for building custom servers
+// something like `createRequestHandler(pathToBuild)`.
+export const withoutHmrPortError = (stderr: string) =>
+  stderr.replace(/WebSocket server error: Port is already in use/, "").trim();

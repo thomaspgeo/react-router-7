@@ -1,7 +1,12 @@
 import { expect, Page } from "@playwright/test";
 import getPort from "get-port";
 
-import { matchLine, testTemplate, urlRegex } from "./utils";
+import {
+  matchLine,
+  testTemplate,
+  urlRegex,
+  withoutHmrPortError,
+} from "./utils";
 
 const test = testTemplate("vercel");
 
@@ -15,7 +20,7 @@ test("dev", async ({ page, $ }) => {
 
   const url = await matchLine(dev.stdout, urlRegex.custom);
   await workflow({ page, url });
-  expect(dev.buffer.stderr).toBe("");
+  expect(withoutHmrPortError(dev.buffer.stderr)).toBe("");
 });
 
 test("build", async ({ $ }) => {
