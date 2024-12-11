@@ -15,6 +15,7 @@ test("dev", async ({ page, $ }) => {
 
   const url = await matchLine(dev.stdout, urlRegex.viteDev);
   await workflow({ page, url });
+  expect(dev.buffer.stderr).toBe("");
 });
 
 test("build + start", async ({ page, $ }) => {
@@ -25,6 +26,7 @@ test("build + start", async ({ page, $ }) => {
 
   const url = await matchLine(start.stdout, urlRegex.reactRouterServe);
   await workflow({ page, url });
+  expect(start.buffer.stderr).toBe("");
 });
 
 async function workflow({ page, url }: { page: Page; url: string }) {
@@ -32,4 +34,5 @@ async function workflow({ page, url }: { page: Page; url: string }) {
   await expect(page).toHaveTitle(/New React Router App/);
   await page.getByRole("link", { name: "React Router Docs" }).waitFor();
   await page.getByRole("link", { name: "Join Discord" }).waitFor();
+  expect(page.errors).toStrictEqual([]);
 }
