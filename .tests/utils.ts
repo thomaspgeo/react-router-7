@@ -1,4 +1,3 @@
-import * as os from "node:os";
 import { fileURLToPath } from "url";
 
 import { test as playwrightTest } from "@playwright/test";
@@ -16,8 +15,7 @@ import { ChildProcess } from "child_process";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = Path.join(__filename, "../..");
-
-const TMP = Path.join(os.tmpdir(), "react-router-templates.tests");
+const TMP = Path.join(ROOT, ".tests/tmp");
 
 declare module "@playwright/test" {
   interface Page {

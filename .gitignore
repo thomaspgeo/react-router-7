@@ -1,2 +1,5 @@
 .DS_Store
 /node_modules/
+
+# https://github.com/netlify/cli/issues/6958
+.netlify
