@@ -28,7 +28,8 @@ test("build", async ({ $ }) => {
 });
 
 // For some reason, `netlify serve` can't find our `build` script 🤷
-// This happens when running the template directly, not just in tests
+// This happens when running the template within this monorepo, not just in tests
+// It does not happen when the template is initialized via `pnpm create react-router --template`
 test.skip("build + start", async ({ page, edit, $ }) => {
   await edit("netlify.toml", (txt) =>
     txt
