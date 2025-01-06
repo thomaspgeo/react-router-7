@@ -1,9 +1,7 @@
 .DS_Store
 /node_modules/
+*.tsbuildinfo
 
 # React Router
 /.react-router/
 /build/
-
-# TypeScript incremental compilation cache
-*.tsbuildinfo
