@@ -169,6 +169,9 @@ importers:
       '@react-router/serve':
         specifier: '*'
         version: 7.0.0(react-router@7.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.2)
+      cross-env:
+        specifier: ^7.0.3
+        version: 7.0.3
       isbot:
         specifier: ^5.1.17
         version: 5.1.17
@@ -197,9 +200,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       postcss:
         specifier: ^8.4.49
         version: 8.4.49
@@ -224,6 +224,9 @@ importers:
       '@react-router/serve':
         specifier: '*'
         version: 7.0.0(react-router@7.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.2)
+      cross-env:
+        specifier: ^7.0.3
+        version: 7.0.3
       isbot:
         specifier: ^5.1.17
         version: 5.1.17
@@ -243,9 +246,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.49)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       postcss:
         specifier: ^8.4.49
         version: 8.4.49
