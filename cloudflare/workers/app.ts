@@ -1,12 +1,15 @@
 import { createRequestHandler } from "react-router";
 
 declare global {
-  interface CloudflareEnvironment {}
+  interface CloudflareEnvironment extends Env {}
 }
 
 declare module "react-router" {
   export interface AppLoadContext {
-    VALUE_FROM_CLOUDFLARE: string;
+    cloudflare: {
+      env: CloudflareEnvironment;
+      ctx: ExecutionContext;
+    };
   }
 }
 
@@ -17,9 +20,10 @@ const requestHandler = createRequestHandler(
 );
 
 export default {
-  fetch(request, env) {
+  fetch(request, env, ctx) {
+    console.log("yo");
     return requestHandler(request, {
-      VALUE_FROM_CLOUDFLARE: "Hello from Cloudflare",
+      cloudflare: { env, ctx },
     });
   },
 } satisfies ExportedHandler<CloudflareEnvironment>;
