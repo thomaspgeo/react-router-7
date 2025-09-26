@@ -72,11 +72,11 @@ npx create-react-router@latest --template remix-run/react-router-templates/node-
 
 Many vendors maintain their own templates for React Router. The following are popular deployment platforms with their own templates and deployment guides:
 
-- [**Cloudflare Guide**](https://developers.cloudflare.com/workers/framework-guides/web-apps/react-router/)
+- [Cloudflare Guide](https://developers.cloudflare.com/workers/framework-guides/web-apps/react-router/)
 
-- [**Netlify Guide**](https://docs.netlify.com/build/frameworks/framework-setup-guides/react-router/)
+- [Netlify Guide](https://docs.netlify.com/build/frameworks/framework-setup-guides/react-router/)
 
-- [**Vercel Guide**](https://vercel.com/templates/react-router/react-router-boilerplate)
+- [Vercel Guide](https://vercel.com/templates/react-router/react-router-boilerplate)
 
 ### Community Templates
 
